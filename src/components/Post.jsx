@@ -1,6 +1,6 @@
 import React from "react";
-import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, IconButton , Typography} from "@mui/material";
-import { Checkbox, Favorite, FavoriteBorder, MoreVert , Share } from "@mui/icons-material";
+import { Avatar, Card, CardActions, CardContent, CardHeader, CardMedia, IconButton , Typography, Checkbox} from "@mui/material";
+import { Favorite, FavoriteBorder, MoreVert , Share } from "@mui/icons-material";
 
 const Post = () => {
     return (

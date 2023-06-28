@@ -21,7 +21,11 @@ import {
 
 const Sidebar = () => {
   return (
-    <Box position="sticky" flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box
+      flex={1}
+      p={2}
+      sx={{ display: { xs: "none", sm: "block" } }}
+    >
       <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href="#home">
