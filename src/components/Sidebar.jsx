@@ -1,10 +1,27 @@
 import React from "react";
-import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Switch } from "@mui/material";
-import { AccountBox, Groups, Home, ModeNight, Pages, Person, Settings, Storefront } from "@mui/icons-material";
+import {
+  Box,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Switch,
+} from "@mui/material";
+import {
+  AccountBox,
+  Groups,
+  Home,
+  ModeNight,
+  Pages,
+  Person,
+  Settings,
+  Storefront,
+} from "@mui/icons-material";
 
 const Sidebar = () => {
   return (
-    <Box flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
+    <Box position="sticky" flex={1} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
       <List>
         <ListItem disablePadding>
           <ListItemButton component="a" href="#home">
