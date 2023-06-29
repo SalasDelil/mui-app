@@ -19,7 +19,7 @@ import {
   Storefront,
 } from "@mui/icons-material";
 
-const Sidebar = () => {
+const Sidebar = ({mode, setMode}) => {
   return (
     <Box
       position="static"
@@ -90,7 +90,7 @@ const Sidebar = () => {
             <ListItemIcon>
               <ModeNight />
             </ListItemIcon>
-            <Switch />
+            <Switch onChange={(e) => setMode(mode === "light" ? "dark" : "light")} />
           </ListItemButton>
         </ListItem>
       </List>
