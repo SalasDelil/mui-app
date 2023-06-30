@@ -54,7 +54,7 @@ const Navbar = ({ mode, setMode }) => {
 
   return (
     <AppBar position="sticky">
-      <StyledToolbar color="text.primary">
+      <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
           Silvanus
         </Typography>
@@ -86,7 +86,7 @@ const Navbar = ({ mode, setMode }) => {
         >
           <Leftbar mode={mode} setMode={setMode} />
         </Menu>
-        <Search>
+        <Search color="text.primary">
           <InputBase placeholder="Search..." />
         </Search>
         <Icons>
