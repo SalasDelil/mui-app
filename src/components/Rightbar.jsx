@@ -3,6 +3,7 @@ import {
   Avatar,
   AvatarGroup,
   Box,
+  Divider,
   ImageList,
   ImageListItem,
   List,
@@ -58,19 +59,19 @@ const Rightbar = () => {
         </Typography>
         <ImageList cols={3} rowHeight={100} gap={4}>
           <ImageListItem>
-            <Img
+            <img
               src="https://th.bing.com/th/id/OIP.fBvwX7wo8zvdGbJVgGsq5QHaGr?pid=ImgDet&rs=1"
               alt=""
             />
           </ImageListItem>
           <ImageListItem>
-            <Img
+            <img
               src="https://th.bing.com/th/id/OIP.1ATYXLgDr0itQPKb7NA9xwHaEK?w=312&h=180&c=7&r=0&o=5&pid=1.7"
               alt=""
             />
           </ImageListItem>
           <ImageListItem>
-            <Img
+            <img
               src="https://th.bing.com/th/id/OIP.5b4a93N73gHlploUfQMt2wHaHa?pid=ImgDet&rs=1"
               alt=""
             />
