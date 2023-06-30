@@ -56,7 +56,7 @@ const Navbar = ({ mode, setMode }) => {
     <AppBar position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          Silvanus
+          MotherBet
         </Typography>
         <Widgets
           onClick={(e) => setWidget(true)}
@@ -86,8 +86,8 @@ const Navbar = ({ mode, setMode }) => {
         >
           <Leftbar mode={mode} setMode={setMode} />
         </Menu>
-        <Search color="text.primary">
-          <InputBase placeholder="Search..." />
+        <Search>
+          <InputBase color="text.primary" placeholder="Search..." />
         </Search>
         <Icons>
           <Badge badgeContent={4} color="error">
