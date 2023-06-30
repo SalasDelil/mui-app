@@ -15,12 +15,23 @@ import {
 
 const Rightbar = () => {
   return (
-    <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>
-      <Box position="fixed" width={300}>
+    <Box
+      position="static"
+      flex={2}
+      p={2}
+      // sx={{ display: { xs: "none", sm: "block" } }}
+      sx={{
+        display: "none",
+        "@media (min-width: 600px)": {
+          display: "block",
+        },
+      }}
+    >
+      <Box position="fixed" width="23%">
         <Typography variant="h6" fontWeight={100} mb={2}>
           Online Friends
         </Typography>
-        <AvatarGroup max={5}>
+        <AvatarGroup max={4}>
           <Avatar
             alt="Remy Sharp"
             src="https://th.bing.com/th/id/OIP.GlXqxcR9EmviN5kuwaUsMQHaIB?pid=ImgDet&rs=1"
@@ -85,7 +96,10 @@ const Rightbar = () => {
         >
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="https://th.bing.com/th/id/OIP.jnieQvL1DtS8DEIMHGXQ8AHaLH?pid=ImgDet&rs=1" />
+              <Avatar
+                alt="Remy Sharp"
+                src="https://th.bing.com/th/id/OIP.jnieQvL1DtS8DEIMHGXQ8AHaLH?pid=ImgDet&rs=1"
+              />
             </ListItemAvatar>
             <ListItemText
               primary="Brunch this weekend?"
@@ -107,7 +121,10 @@ const Rightbar = () => {
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Travis Howard" src="https://th.bing.com/th/id/OIP.GlXqxcR9EmviN5kuwaUsMQHaIB?pid=ImgDet&rs=1" />
+              <Avatar
+                alt="Travis Howard"
+                src="https://th.bing.com/th/id/OIP.GlXqxcR9EmviN5kuwaUsMQHaIB?pid=ImgDet&rs=1"
+              />
             </ListItemAvatar>
             <ListItemText
               primary="Summer BBQ"
@@ -129,7 +146,10 @@ const Rightbar = () => {
           <Divider variant="inset" component="li" />
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Cindy Baker" src="https://th.bing.com/th/id/OIP.4VQTn1jxChFq-hhuV7kQ7AHaHa?pid=ImgDet&rs=1" />
+              <Avatar
+                alt="Cindy Baker"
+                src="https://th.bing.com/th/id/OIP.4VQTn1jxChFq-hhuV7kQ7AHaHa?pid=ImgDet&rs=1"
+              />
             </ListItemAvatar>
             <ListItemText
               primary="Oui Oui"

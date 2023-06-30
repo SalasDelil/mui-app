@@ -8,10 +8,15 @@ import {
   Badge,
   Avatar,
   Menu,
-  MenuItem,
+  MenuItem
 } from "@mui/material";
-import { Mail, Notifications, Widgets } from "@mui/icons-material";
+import {
+  Mail,
+  Notifications,
+  Widgets
+} from "@mui/icons-material";
 import { useState } from "react";
+import Leftbar from "./Leftbar";
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -43,16 +48,44 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false)
+const Navbar = ({ mode, setMode }) => {
+  const [open, setOpen] = useState(false);
+  const [widget, setWidget] = useState(false);
 
   return (
     <AppBar position="sticky">
-      <StyledToolbar>
+      <StyledToolbar color="text.primary">
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          Navbar
+          Silvanus
         </Typography>
-        <Widgets sx={{ display: { xs: "block", sm: "none" } }} />
+        <Widgets
+          onClick={(e) => setWidget(true)}
+          sx={{ display: { xs: "block", sm: "none" } }}
+        />
+        <Menu
+          id="positioned-menu"
+          aria-labelledby="positioned-button"
+          onClose={(e) => setWidget(false)}
+          open={widget}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "left",
+          }}
+          sx={{
+            bgcolor: "background.default",
+            width: "40%", height: "63%",
+            display: "block",
+            "@media (min-width: 600px)": {
+              display: "none",
+            },
+          }}
+        >
+          <Leftbar mode={mode} setMode={setMode} />
+        </Menu>
         <Search>
           <InputBase placeholder="Search..." />
         </Search>
@@ -70,10 +103,7 @@ const Navbar = () => {
           />
         </Icons>
         <UserBox onClick={(e) => setOpen(true)}>
-          <Avatar
-            sx={{ width: 30, height: 30 }}
-            src="./images/sali.jpg"
-          />
+          <Avatar sx={{ width: 30, height: 30 }} src="./images/sali.jpg" />
           <Typography variant="span">Salas</Typography>
         </UserBox>
       </StyledToolbar>
@@ -84,17 +114,16 @@ const Navbar = () => {
         open={open}
         anchorOrigin={{
           vertical: "top",
-          horizontal: "right"
+          horizontal: "right",
         }}
         transformOrigin={{
-          vertical:"top",
-          horizontal:"right"
+          vertical: "top",
+          horizontal: "right",
         }}
       >
         <MenuItem>Profile</MenuItem>
         <MenuItem>My account</MenuItem>
         <MenuItem>Logout</MenuItem>
-
       </Menu>
     </AppBar>
   );

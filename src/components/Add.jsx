@@ -38,12 +38,11 @@ const App = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <Tooltip
+      <Tooltip onClick={(e) => setOpen(true)}
         sx={{
           position: "fixed",
           bottom: 20,
-          left: 20,
-          left: { xs: "calc(50% - 25px)", md: 30 },
+          left: { xs: "calc(50% - 25px)", sm: 20 },
         }}
       >
         <Fab color="primary" aria-label="Add">
@@ -51,16 +50,17 @@ const App = () => {
         </Fab>
       </Tooltip>
       <StyledModal
-        open={(e) => setOpen(true)}
+        open={open}
         onClose={(e) => setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box
-          width={450}
+          width={400}
           height={280}
           bgcolor={"background.default"}
-          color="primary"
+          color="text.primary"
+          p={3}
           borderRadius={5}
         >
           <Typography variant="h6" color="gray" textAlign="center">
@@ -79,11 +79,11 @@ const App = () => {
             sx={{ width: "100%" }}
             id="standard-multiline-static"
             multiline
-            rows={4}
+            rows={3}
             placeholder="What's on your mind?"
             variant="standard"
           />
-          <Stack>
+          <Stack direction="row" gap={1} mt={2} mb={4}>
             <EmojiEmotions color="primary" />
             <Image color="secondary" />
             <VideoCameraBack color="success" />
