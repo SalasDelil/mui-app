@@ -60,7 +60,7 @@ const Navbar = ({ mode, setMode }) => {
     <AppBar position="sticky">
       <StyledToolbar>
         <Typography variant="h6" sx={{ display: { xs: "none", sm: "block" } }}>
-          MotherBet
+          Gebeta
         </Typography>
         <Widgets
           onClick={(e) => setWidget(true)}
@@ -81,7 +81,7 @@ const Navbar = ({ mode, setMode }) => {
           }}
           sx={{
             bgcolor: "background.default",
-            width: "40%", height: "63%",
+            width: "50%", height: "60%",
             display: "block",
             "@media (min-width: 600px)": {
               display: "none",
