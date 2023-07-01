@@ -15,6 +15,7 @@ import {
   Notifications,
   Widgets
 } from "@mui/icons-material";
+import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
 import Leftbar from "./Leftbar";
 
@@ -22,13 +23,6 @@ const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
 });
-
-const Search = styled("div")(({ theme }) => ({
-  backgroundColor: "white",
-  padding: "0 10px",
-  borderRadius: theme.shape.borderRadius,
-  width: "40%",
-}));
 
 const Icons = styled(Box)(({ theme }) => ({
   display: "none",
@@ -51,6 +45,16 @@ const UserBox = styled(Box)(({ theme }) => ({
 const Navbar = ({ mode, setMode }) => {
   const [open, setOpen] = useState(false);
   const [widget, setWidget] = useState(false);
+
+  const Search = styled("div")(({ theme }) => ({
+    display: "flex",
+    gap: "6px",
+    alignItems: "center",
+    backgroundColor: "rgb(180, 180, 180)",
+    padding: "4px 10px",
+    borderRadius: "20px",
+    width: "40%",
+  }));
 
   return (
     <AppBar position="sticky">
@@ -87,7 +91,8 @@ const Navbar = ({ mode, setMode }) => {
           <Leftbar mode={mode} setMode={setMode} />
         </Menu>
         <Search>
-          <InputBase color="text.primary" placeholder="Search..." />
+          <SearchIcon />
+          <InputBase padding={4} placeholder="Search..." />
         </Search>
         <Icons>
           <Badge badgeContent={4} color="error">
@@ -103,7 +108,7 @@ const Navbar = ({ mode, setMode }) => {
           />
         </Icons>
         <UserBox onClick={(e) => setOpen(true)}>
-          <Avatar sx={{ width: 30, height: 30 }} src="./images/sali.jpg" />
+          <Avatar sx={{ width: 30, height: 30 }} src="./images/Mesi.jpg" />
           <Typography variant="span">Salas</Typography>
         </UserBox>
       </StyledToolbar>
